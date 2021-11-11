@@ -1,4 +1,4 @@
-include /usr/share/dpkg/pkg-info.mk
+include /usr/share/dpkg/default.mk
 
 PACKAGE=proxmox-ve
 
@@ -25,7 +25,7 @@ ${PVE_DEB}: debian
 
 .PHONY: upload
 upload: ${DEBS}
-	tar cf - ${DEBS}|ssh repoman@repo.proxmox.com -- upload --product pve --dist buster --arch ${ARCH}
+	tar cf - ${DEBS}|ssh repoman@repo.proxmox.com -- upload --product pve --dist bullseye --arch ${DEB_BUILD_ARCH}
 
 .PHONY: distclean
 distclean: clean
