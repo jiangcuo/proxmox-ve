@@ -34,6 +34,17 @@ my $cleanup = sub {
   exit $rc;
 };
 
+my $file_read_firstline = sub {
+    my ($filename) = @_;
+
+    my $fh = IO::File->new($filename, "r");
+    return undef if !$fh;
+    my $res = <$fh>;
+    chomp $res if $res;
+    $fh->close;
+    return $res;
+};
+
 chomp (my $ver = <$fh>);
 if ($ver ne "VERSION 2") {
   $log->("apt-pve-hook misconfigured, expecting hook protocol version 2\n");
@@ -82,6 +93,23 @@ while (my $line = <$fh>) {
       $log->("\n");
       $log->("Press enter to continue, or C^c to abort.\n");
       $cleanup->(0, 1);
+    }
+  }
+  if ($pkg =~ /^pve-kernel-/) {
+    if ($action eq '**REMOVE**') {
+      my $next_boot_ver = $file_read_firstline->("/etc/kernel/next-boot-pin");
+      my $pinned_ver = $file_read_firstline->("/etc/kernel/proxmox-boot-pin");
+      my $remove_pinned_ver = ($next_boot_ver && $pkg =~ /$next_boot_ver$/);
+      $remove_pinned_ver ||= ($pinned_ver && $pkg =~ /$pinned_ver$/);
+      if ($remove_pinned_ver) {
+        $log->("!! WARNING !!\n");
+        $log->("You are attempting to remove the currently pinned kernel '${pkg}'!\n");
+        $log->("\n");
+        $log->("If you really do not need the version anymore unpin it by running\n");
+        $log->("\tproxmox-boot-tool kernel unpin'\n");
+        $log->("and repeat your apt invocation.\n");
+        $cleanup->(1);
+      }
     }
   }
 }
