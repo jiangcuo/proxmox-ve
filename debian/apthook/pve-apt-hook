@@ -15,7 +15,7 @@ my $log = sub {
   print "W: ($hook_name) $line";
 };
 
-if (!defined $fd || $fd == 0) {
+if (!defined $fd || $fd == 0 || $fd !~ /^\d+$/) {
   $log->("APT_HOOK_INFO_FD not correctly defined, skipping apt-pve-hook checks\n");
   exit 0;
 }
