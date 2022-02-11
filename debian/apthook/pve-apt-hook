@@ -20,14 +20,16 @@ if (!defined $fd || $fd == 0) {
   exit 0;
 }
 
-open(my $fh, "<&=${fd}") or die "E: could not open APT_HOOK_INFO_FD (${fd}) - $!\n";
+open(my $fh, "<&=", $fd) or die "E: could not open APT_HOOK_INFO_FD (${fd}) - $!\n";
 
 my $cleanup = sub {
   my ($rc, $confirm) = @_;
 
   close($fh);
 
-  my $line = <STDIN> if $confirm;
+  if ($confirm) {
+      my $line = <STDIN>;
+  }
 
   exit $rc;
 };
