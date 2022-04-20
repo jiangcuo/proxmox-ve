@@ -1,3 +1,11 @@
+proxmox-ve (7.2-1) bullseye; urgency=medium
+
+  * depend on Linux Kernel 5.15 by default
+
+  * bump version for Proxmox VE 7.2
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 20 Apr 2022 15:00:11 +0200
+
 proxmox-ve (7.1-2) bullseye; urgency=medium
 
   * apt-hook: make code more robust for some input to avoid spurious
