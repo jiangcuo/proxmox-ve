@@ -1,3 +1,14 @@
+proxmox-ve (7.1-2) bullseye; urgency=medium
+
+  * apt-hook: make code more robust for some input to avoid spurious
+    warnings
+
+  * apt-hook: add check preventing the removal of pinned kernels
+
+  * d/control: alternatively allow 5.15 kernel to satisfy kernel dependency
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 20 Apr 2022 11:07:46 +0200
+
 proxmox-ve (7.1-1) bullseye; urgency=medium
 
   * depend on Linux Kernel 5.13 by default
