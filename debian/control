@@ -2,15 +2,20 @@ Source: proxmox-ve
 Section: admin
 Priority: optional
 Maintainer: Proxmox Support Team <support@proxmox.com>
-Build-Depends: debhelper (>=12~), lintian
+Build-Depends: debhelper (>=12~),
+               lintian
 Standards-Version: 4.5.1
 Homepage: https://www.proxmox.com
 
 Package: proxmox-ve
 Architecture: all
 Provides: proxmox-virtual-environment
-Conflicts: proxmox-ve-3.10.0, proxmox-virtual-environment, pve-kernel
-Replaces: proxmox-ve-3.10.0, proxmox-virtual-environment, pve-kernel
+Conflicts: proxmox-ve-3.10.0,
+           proxmox-virtual-environment,
+           pve-kernel
+Replaces: proxmox-ve-3.10.0,
+          proxmox-virtual-environment,
+          pve-kernel
 Depends: apt,
          openssh-client,
          openssh-server,
@@ -21,7 +26,7 @@ Depends: apt,
          pve-qemu-kvm,
          qemu-server,
          spiceterm,
-         vncterm,
+         vncterm
 Description: Proxmox Virtual Environment
  The Proxmox Virtual Environment is an easy to use Open Source
  virtualization platform for running Virtual Appliances and Virtual
