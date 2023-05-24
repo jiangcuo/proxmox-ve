@@ -9,8 +9,6 @@ Homepage: https://www.proxmox.com
 Package: proxmox-ve
 Architecture: all
 Provides: proxmox-virtual-environment
-Conflicts: proxmox-ve-3.10.0, proxmox-virtual-environment, pve-kernel
-Replaces: proxmox-ve-3.10.0, proxmox-virtual-environment, pve-kernel
 Depends: apt,
          openssh-client,
          openssh-server,
