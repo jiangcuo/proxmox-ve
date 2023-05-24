@@ -18,8 +18,6 @@ Depends: apt,
          pve-manager,
          pve-qemu-kvm,
          qemu-server,
-         spiceterm,
-         vncterm,
          ${misc:Depends},
 Description: Proxmox Virtual Environment
  The Proxmox Virtual Environment is an easy to use Open Source
