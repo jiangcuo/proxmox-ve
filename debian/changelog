@@ -1,3 +1,13 @@
+proxmox-ve (8.0.0) bookworm; urgency=medium
+
+  * re-build for Proxmox VE 8 / Debian 12 Bookworm
+
+  * depene on Linux Kernel 6.2 by default
+
+  * switch to native versioning scheme
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 24 May 2023 20:06:19 +0200
+
 proxmox-ve (7.3-1) bullseye; urgency=medium
 
   * bump version for Proxmox VE 7.3
