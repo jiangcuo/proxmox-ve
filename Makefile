@@ -5,6 +5,7 @@ PACKAGE=proxmox-ve
 GITVERSION:=$(shell git rev-parse HEAD)
 
 BUILDDIR ?= $(PACKAGE)-$(DEB_VERSION)
+DSC=$(PACKAGE)_$(DEB_VERSION).dsc
 
 PVE_DEB=$(PACKAGE)_$(DEB_VERSION_UPSTREAM_REVISION)_all.deb
 PVE_HEADERS_DEB=pve-headers_$(DEB_VERSION_UPSTREAM_REVISION)_all.deb
@@ -25,6 +26,17 @@ $(PVE_HEADERS_DEB): $(PVE_DEB)
 $(PVE_DEB): $(BUILDDIR)
 	cd $(BUILDDIR); dpkg-buildpackage -b -uc -us
 	lintian $(DEBS)
+
+dsc: $(DSC)
+	$(MAKE) clean
+	$(MAKE) $(DSC)
+	lintian $(DSC)
+
+$(DSC): $(BUILDDIR)
+	cd $(BUILDDIR); dpkg-buildpackage -S -uc -us
+
+sbuild: $(DSC)
+	sbuild $(DSC)
 
 .PHONY: upload
 upload: $(DEBS)
