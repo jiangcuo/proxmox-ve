@@ -4,23 +4,26 @@ PACKAGE=proxmox-ve
 
 GITVERSION:=$(shell git rev-parse HEAD)
 
+BUILDDIR ?= $(PACKAGE)-$(DEB_VERSION)
+
 PVE_DEB=$(PACKAGE)_$(DEB_VERSION_UPSTREAM_REVISION)_all.deb
 PVE_HEADERS_DEB=pve-headers_$(DEB_VERSION_UPSTREAM_REVISION)_all.deb
-
-BUILD_DIR=build
 
 DEBS=$(PVE_DEB) $(PVE_HEADERS_DEB)
 
 all: deb
 deb: $(DEBS)
 
+$(BUILDDIR): debian
+	rm -rf $@ $@.tmp
+	mkdir -p $@.tmp/debian
+	cp -a debian/ $@.tmp/
+	echo "git clone git://git.proxmox.com/git/proxmox-ve.git\\ngit checkout $(GITVERSION)" > $@.tmp/debian/SOURCE
+	mv $@.tmp $@
+
 $(PVE_HEADERS_DEB): $(PVE_DEB)
-$(PVE_DEB): debian
-	rm -rf $(BUILD_DIR)
-	mkdir -p $(BUILD_DIR)/debian
-	cp -ar debian/* $(BUILD_DIR)/debian/
-	echo "git clone git://git.proxmox.com/git/proxmox-ve.git\\ngit checkout $(GITVERSION)" > $(BUILD_DIR)/debian/SOURCE
-	cd $(BUILD_DIR); dpkg-buildpackage -b -uc -us
+$(PVE_DEB): $(BUILDDIR)
+	cd $(BUILDDIR); dpkg-buildpackage -b -uc -us
 	lintian $(DEBS)
 
 .PHONY: upload
@@ -32,4 +35,4 @@ distclean: clean
 
 .PHONY: clean
 clean:
-	rm -rf *~ $(BUILD_DIR) *.deb *.dsc *.changes *.buildinfo
+	rm -rf *~ $(PACKAGE)-[0-9]*/ $(PACKAGE)*.tar.* *.deb *.dsc *.changes *.build *.buildinfo
