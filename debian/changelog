@@ -1,3 +1,9 @@
+proxmox-ve (8.0.1) bookworm; urgency=medium
+
+  * switch dependency over to proxmox-kernel-helper package (again)
+
+ -- Proxmox Support Team <support@proxmox.com>  Mon, 12 Jun 2023 11:10:13 +0200
+
 proxmox-ve (8.0.0) bookworm; urgency=medium
 
   * re-build for Proxmox VE 8 / Debian 12 Bookworm
@@ -7,6 +13,14 @@ proxmox-ve (8.0.0) bookworm; urgency=medium
   * switch to native versioning scheme
 
  -- Proxmox Support Team <support@proxmox.com>  Wed, 24 May 2023 20:06:19 +0200
+
+proxmox-ve (7.4-1) bullseye; urgency=medium
+
+  * depend on proxmox-kernel-helper
+
+  * bump version for Proxmox VE 7.4
+
+ -- Proxmox Support Team <support@proxmox.com>  Mon, 20 Mar 2023 21:19:15 +0100
 
 proxmox-ve (7.3-1) bullseye; urgency=medium
 
