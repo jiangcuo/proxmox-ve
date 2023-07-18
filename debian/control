@@ -13,9 +13,9 @@ Depends: apt,
          openssh-client,
          openssh-server,
          proxmox-archive-keyring,
-         proxmox-kernel-helper,
-         pve-kernel-6.2,
-         pve-manager,
+         proxmox-kernel-helper (>= 8.0.3),
+         proxmox-default-kernel,
+         pve-manager (>= 8.0.4),
          pve-qemu-kvm,
          qemu-server,
          ${misc:Depends},
@@ -27,7 +27,9 @@ Description: Proxmox Virtual Environment
 
 Package: pve-headers
 Architecture: all
-Depends: pve-headers-6.2, ${misc:Depends},
-Description: Default Proxmox VE Kernel Headers
- This is a metapackage which will install the kernel headers for the
- current default kernel.
+Depends: proxmox-default-headers,
+         ${misc:Depends},
+Section: oldlibs
+Description: Default Proxmox Kernel Headers (transitional package)
+ This is a dummy transitional package to transition to proxmox-default-headers.
+ It can be safely removed.
