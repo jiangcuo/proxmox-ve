@@ -1,3 +1,11 @@
+proxmox-ve (8.0.2) bookworm; urgency=medium
+
+  * switch to new Proxmox kernel meta packages
+
+  * make pve-headers transitional to switch to proxmox-default-headers
+
+ -- Proxmox Support Team <support@proxmox.com>  Tue, 01 Aug 2023 11:39:53 +0200
+
 proxmox-ve (8.0.1) bookworm; urgency=medium
 
   * switch dependency over to proxmox-kernel-helper package (again)
