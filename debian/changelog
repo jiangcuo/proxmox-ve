@@ -1,3 +1,9 @@
+proxmox-ve (8.1.0) bookworm; urgency=medium
+
+  * bump for Proxmox VE 8.1
+
+ -- Proxmox Support Team <support@proxmox.com>  Thu, 23 Nov 2023 09:25:11 +0100
+
 proxmox-ve (8.0.2) bookworm; urgency=medium
 
   * switch to new Proxmox kernel meta packages
