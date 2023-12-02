@@ -14,7 +14,6 @@ Depends: apt,
          openssh-server,
          proxmox-archive-keyring,
          proxmox-kernel-helper (>= 8.0.3),
-         proxmox-default-kernel,
          pve-manager (>= 8.0.4),
          pve-qemu-kvm,
          qemu-server,
@@ -24,12 +23,3 @@ Description: Proxmox Virtual Environment
  virtualization platform for running Virtual Appliances and Virtual
  Machines. This is a meta package which will install everything
  needed.
-
-Package: pve-headers
-Architecture: all
-Depends: proxmox-default-headers,
-         ${misc:Depends},
-Section: oldlibs
-Description: Default Proxmox Kernel Headers (transitional package)
- This is a dummy transitional package to transition to proxmox-default-headers.
- It can be safely removed.
