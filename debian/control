@@ -2,7 +2,8 @@ Source: proxmox-ve
 Section: admin
 Priority: optional
 Maintainer: Proxmox Support Team <support@proxmox.com>
-Build-Depends: debhelper-compat (= 13), lintian,
+Build-Depends: debhelper-compat (= 13),
+               lintian,
 Standards-Version: 4.6.2
 Homepage: https://www.proxmox.com
 
@@ -13,8 +14,8 @@ Depends: apt,
          openssh-client,
          openssh-server,
          proxmox-archive-keyring,
-         proxmox-kernel-helper (>= 8.0.3),
          proxmox-default-kernel,
+         proxmox-kernel-helper (>= 8.0.3),
          pve-manager (>= 8.0.4),
          pve-qemu-kvm,
          qemu-server,
