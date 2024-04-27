@@ -1,3 +1,18 @@
+proxmox-ve (8.2.0) bookworm; urgency=medium
+
+  * drop postinst/rm scripts that managed the links to the current default
+    kernel for fallback use, this moved to the new separate meta package for
+    default-kernel
+
+  * add systemd-sys to depends to better encode that Proxmox VE only works
+    with systemd as PID1
+
+  * disable the apt hook, that ensures that Proxmox VE is not deinstalled by
+    accident due to some botched repository configuration from the user, when
+    the meta package is actually removed to avoid issues on purge.
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 17 Apr 2024 07:38:30 +0200
+
 proxmox-ve (8.1.0) bookworm; urgency=medium
 
   * bump for Proxmox VE 8.1
