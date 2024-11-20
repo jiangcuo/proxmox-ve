@@ -1,3 +1,9 @@
+proxmox-ve (8.3.0) bookworm; urgency=medium
+
+  * bump for Proxmox VE 8.3
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 20 Nov 2024 11:42:06 +0100
+
 proxmox-ve (8.2.0) bookworm; urgency=medium
 
   * drop postinst/rm scripts that managed the links to the current default
