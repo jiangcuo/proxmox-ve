@@ -2,8 +2,7 @@ Source: proxmox-ve
 Section: admin
 Priority: optional
 Maintainer: Proxmox Support Team <support@proxmox.com>
-Build-Depends: debhelper-compat (= 13),
-               lintian,
+Build-Depends: debhelper-compat (= 13), lintian,
 Standards-Version: 4.6.2
 Homepage: https://www.proxmox.com
 
@@ -29,8 +28,7 @@ Description: Proxmox Virtual Environment
 
 Package: pve-headers
 Architecture: all
-Depends: proxmox-default-headers,
-         ${misc:Depends},
+Depends: proxmox-default-headers, ${misc:Depends},
 Section: oldlibs
 Description: Default Proxmox Kernel Headers (transitional package)
  This is a dummy transitional package to transition to proxmox-default-headers.
