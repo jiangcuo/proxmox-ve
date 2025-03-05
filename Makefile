@@ -10,7 +10,7 @@ DSC=$(PACKAGE)_$(DEB_VERSION).dsc
 PVE_DEB=$(PACKAGE)_$(DEB_VERSION_UPSTREAM_REVISION)_all.deb
 PVE_HEADERS_DEB=pve-headers_$(DEB_VERSION_UPSTREAM_REVISION)_all.deb
 
-DEBS=$(PVE_DEB) $(PVE_HEADERS_DEB)
+DEBS=$(PVE_DEB)
 
 all: deb
 deb: $(DEBS)
@@ -22,7 +22,6 @@ $(BUILDDIR): debian
 	echo "git clone git://git.proxmox.com/git/proxmox-ve.git\\ngit checkout $(GITVERSION)" > $@.tmp/debian/SOURCE
 	mv $@.tmp $@
 
-$(PVE_HEADERS_DEB): $(PVE_DEB)
 $(PVE_DEB): $(BUILDDIR)
 	cd $(BUILDDIR); dpkg-buildpackage -b -uc -us
 	lintian $(DEBS)

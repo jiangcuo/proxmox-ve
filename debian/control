@@ -1,14 +1,15 @@
 Source: proxmox-ve
 Section: admin
 Priority: optional
-Maintainer: Proxmox Support Team <support@proxmox.com>
-Build-Depends: debhelper-compat (= 13), lintian,
+Maintainer: Lierfang <itsupport@lierfang.com>
+Build-Depends: debhelper-compat (= 13),
+               lintian,
 Standards-Version: 4.6.2
-Homepage: https://www.proxmox.com
+Homepage: https://www.lierfang.com
 
 Package: proxmox-ve
 Architecture: all
-Provides: proxmox-virtual-environment,
+Provides: proxmox-virtual-environment,pxvirt
 Depends: apt,
          openssh-client,
          openssh-server,
