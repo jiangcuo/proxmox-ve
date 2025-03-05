@@ -22,6 +22,12 @@ proxmox-ve (8.3.0) bookworm; urgency=medium
 
  -- Proxmox Support Team <support@proxmox.com>  Wed, 20 Nov 2024 11:42:06 +0100
 
+proxmox-ve (8.3.1) bookworm; urgency=medium
+
+  * Build for pxvirt
+
+ -- Lierfang <itsupport@lierfang.com>  Wed, 05 Mar 2025 16:16:41 +0800
+
 proxmox-ve (8.2.0) bookworm; urgency=medium
 
   * drop postinst/rm scripts that managed the links to the current default
