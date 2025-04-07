@@ -1,3 +1,9 @@
+proxmox-ve (8.4.0) bookworm; urgency=medium
+
+  * bump for Proxmox VE 8.4
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 09 Apr 2025 08:00:00 +0200
+
 proxmox-ve (8.3.0) bookworm; urgency=medium
 
   * bump for Proxmox VE 8.3
