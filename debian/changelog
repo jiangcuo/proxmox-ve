@@ -1,3 +1,9 @@
+proxmox-ve (9.0.0) bookworm; urgency=medium
+
+  * re-build for Proxmox VE 9, based on Debian 13 Trixie.
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 18 Jun 2025 09:38:32 +0200
+
 proxmox-ve (8.4.0) bookworm; urgency=medium
 
   * bump for Proxmox VE 8.4
