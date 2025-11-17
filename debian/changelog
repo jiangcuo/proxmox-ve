@@ -1,3 +1,9 @@
+proxmox-ve (9.1.0) trixie; urgency=medium
+
+  * bump for Proxmox VE 9.1
+
+ -- Proxmox Support Team <support@proxmox.com>  Mon, 17 Nov 2025 23:49:27 +0100
+
 proxmox-ve (9.0.0) trixie; urgency=medium
 
   * re-build for Proxmox VE 9, based on Debian 13 Trixie.
